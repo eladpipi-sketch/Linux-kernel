@@ -204,4 +204,4 @@ static struct pci_driver edu_driver = {
 module_pci_driver(edu_driver);
 
 MODULE_LICENSE("GPL");
-MODULE_DESCRIPTION("Days 31-36: driver for QEMU's edu PCI device");
+MODULE_DESCRIPTION("Day 29: driver for QEMU's edu PCI device");

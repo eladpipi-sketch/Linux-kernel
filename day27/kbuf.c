@@ -143,4 +143,4 @@ module_init(kbuf_init);
 module_exit(kbuf_exit);
 
 MODULE_LICENSE("GPL");
-MODULE_DESCRIPTION("Days 26-30: a tiny pipe at /dev/kbuf");
+MODULE_DESCRIPTION("Day 27: a tiny pipe at /dev/kbuf");

@@ -54,4 +54,4 @@ module_init(list_init);
 module_exit(list_exit);
 
 MODULE_LICENSE("GPL");
-MODULE_DESCRIPTION("Day 25: a kernel linked list");
+MODULE_DESCRIPTION("Day 22: a kernel linked list");

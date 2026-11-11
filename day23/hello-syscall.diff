@@ -1,16 +1,3 @@
-From c40d37311ccfd1fd38b451fd232f9cb2609b0873 Mon Sep 17 00:00:00 2001
-From: Learner <learner@example.com>
-Date: Wed, 11 Nov 2026 07:30:15 +0000
-Subject: [PATCH] x86/syscalls: add hello() for learning
-
-Adds a toy system call that logs its caller and returns twice its argument. Written while learning; not meant for merging.
-
-Signed-off-by: Learner <learner@example.com>
----
- arch/x86/entry/syscalls/syscall_64.tbl | 1 +
- kernel/sys.c                           | 6 ++++++
- 2 files changed, 7 insertions(+)
-
 diff --git a/arch/x86/entry/syscalls/syscall_64.tbl b/arch/x86/entry/syscalls/syscall_64.tbl
 index d5b6045b0..339e15cd1 100644
 --- a/arch/x86/entry/syscalls/syscall_64.tbl
@@ -37,6 +24,3 @@ index 35b538ba8..2f152e464 100644
 +	pr_info("hello: called by %s (pid %d) with %d\n", current->comm, current->pid, x);
 +	return x * 2;
 +}
--- 
-2.43.0
-

@@ -1,12 +1,13 @@
 #!/bin/busybox sh
-# PID 1 of the VM: mount the kernel's virtual file systems, then start a shell.
+# PID 1 of the VM: mount the kernel's file systems and your shared lab folder.
 /bin/busybox --install -s /bin
 mount -t proc     proc     /proc
 mount -t sysfs    sysfs    /sys
 mount -t devtmpfs devtmpfs /dev
 mount -t debugfs  debugfs  /sys/kernel/debug
 mount -t tracefs  tracefs  /sys/kernel/tracing
-echo "Linux $(uname -r) is up. Your files are in /root. Type exit to power off."
-cd /root
+mount -t 9p -o trans=virtio,version=9p2000.L lab /lab
+echo "Linux $(uname -r) is up. ~/os/lab is at /lab. Type exit to power off."
+cd /lab
 setsid cttyhack sh
 poweroff -f

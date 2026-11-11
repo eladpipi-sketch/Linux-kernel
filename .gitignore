@@ -1,0 +1,17 @@
+# Kernel module build output
+*.o
+*.ko
+*.mod
+*.mod.c
+.*.cmd
+Module.symvers
+modules.order
+
+# Test programs that make builds from their .cpp files
+day23/getppid_test
+day23/syscall_test
+day25/pagemap_test
+day26/labmap_test
+day27/kbuf_test
+day27/epoll_test
+pico/usb_test

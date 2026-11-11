@@ -23,4 +23,4 @@ module_init(crash_init);
 module_exit(crash_exit);
 
 MODULE_LICENSE("GPL");
-MODULE_DESCRIPTION("Day 24: a deliberate NULL pointer bug");
+MODULE_DESCRIPTION("Day 22: a deliberate NULL pointer bug");

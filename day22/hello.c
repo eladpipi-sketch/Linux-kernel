@@ -20,4 +20,4 @@ module_init(hello_init);
 module_exit(hello_exit);
 
 MODULE_LICENSE("GPL");
-MODULE_DESCRIPTION("Day 23: the smallest useful module");
+MODULE_DESCRIPTION("Day 22: the smallest useful module");
