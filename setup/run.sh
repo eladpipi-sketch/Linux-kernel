@@ -1,7 +1,7 @@
 #!/bin/bash
 # Boot the lab kernel. ~/os/lab appears inside the VM as /lab.
 # Extra arguments go on the kernel command line, e.g.  run.sh initcall_debug
-# Two optional variables, used after Day 34:
+# Two optional variables, used after Day 18:
 #   KERNEL=linux-rust/arch/x86/boot/bzImage    boot another kernel image
 #   QEMU_EXTRA="-device pci-testdev"           add QEMU options
 # Quit: type exit in the VM, or press Ctrl-a then x.

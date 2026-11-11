@@ -7,11 +7,30 @@
 Module.symvers
 modules.order
 
-# Test programs that make builds from their .cpp files
-day23/getppid_test
-day23/syscall_test
-day25/pagemap_test
-day26/labmap_test
-day27/kbuf_test
-day27/epoll_test
-pico/usb_test
+# Programs that make builds from their .cpp files
+day01/fork_exec
+day01/syscall_cost
+day01/solution/tinysh
+day02/address_space
+day02/alloc
+day02/rss
+day02/count_lines
+day02/solution/faults
+day03/threads
+day03/race
+day03/signals
+day03/deadlock
+day03/solution/race
+day04/fd
+day04/writes
+day04/epoll_stdin
+day04/solution/tinysh
+day07/getppid_test
+day07/syscall_test
+day09/pagemap_test
+day10/labmap_test
+day10/solution/fault_test
+day11/kbuf_test
+day11/epoll_test
+day11/solution/nb_read
+esp32/usb_test
