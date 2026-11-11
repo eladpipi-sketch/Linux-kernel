@@ -4,7 +4,8 @@ Code and scripts for "Linux Internals in 18 Days". Days 1–4 look at the kernel
 from outside, on your own Linux machine. Days 5–18 build and boot your own Linux
 7.3 in QEMU and write modules and drivers for each major part of the kernel.
 Every program, module and exercise solution here was built and run on Linux 7.3,
-GCC 13.3 and QEMU 8.2.2 on Ubuntu 24.04.
+GCC 13.3 and QEMU 8.2.2 on Ubuntu 24.04. The course itself is
+`Linux_Internals_in_18_Days.pdf`.
 
 Clone it as `~/os/lab`; the scripts expect that path:
 
