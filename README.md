@@ -14,7 +14,11 @@ Linux 7.3, GCC 13 and QEMU 8.2.
 | `drivers/list.c` | 25 | `kmalloc`, `list_head`, `container_of` |
 | `drivers/kbuf.c`, `kbuf.h`, `kbuf_test.cpp` | 26–30 | `/dev/kbuf`, a tiny pipe in the kernel, plus its ioctl test |
 | `drivers/edu.c` | 31–36 | PCI driver for QEMU's `edu` device: MMIO, interrupts, DMA |
+| `drivers/buggy.c` | 37 | use-after-free, out-of-bounds and lock-order bugs for KASAN and lockdep |
+| `drivers/syscall_test.cpp` | 39 | calls the new system call 473 |
+| `patches/0001-x86-syscalls-add-hello-for-learning.patch` | 39–40 | the Day 39 kernel change, as `git format-patch` wrote it |
 
 To use it, copy `vm/` and `drivers/` into `~/os` (`cp vm/init ~/os/vm/rootfs/init`
 for the init script), then follow the days. The guide builds each file up step
-by step; these are the finished versions to compare against.
+by step; these are the finished versions to compare against. To apply the
+system call to a clean v7.3 tree: `cd ~/os/linux && git am <path to the patch>`.

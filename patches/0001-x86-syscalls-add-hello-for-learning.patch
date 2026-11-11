@@ -1,0 +1,42 @@
+From c40d37311ccfd1fd38b451fd232f9cb2609b0873 Mon Sep 17 00:00:00 2001
+From: Learner <learner@example.com>
+Date: Wed, 11 Nov 2026 07:30:15 +0000
+Subject: [PATCH] x86/syscalls: add hello() for learning
+
+Adds a toy system call that logs its caller and returns twice its argument. Written while learning; not meant for merging.
+
+Signed-off-by: Learner <learner@example.com>
+---
+ arch/x86/entry/syscalls/syscall_64.tbl | 1 +
+ kernel/sys.c                           | 6 ++++++
+ 2 files changed, 7 insertions(+)
+
+diff --git a/arch/x86/entry/syscalls/syscall_64.tbl b/arch/x86/entry/syscalls/syscall_64.tbl
+index d5b6045b0..339e15cd1 100644
+--- a/arch/x86/entry/syscalls/syscall_64.tbl
++++ b/arch/x86/entry/syscalls/syscall_64.tbl
+@@ -397,6 +397,7 @@
+ 470	common	listns			sys_listns
+ 471	common	rseq_slice_yield	sys_rseq_slice_yield
+ 472	common	fchroot			sys_fchroot
++473	common	hello			sys_hello
+ 
+ #
+ # Due to a historical design error, certain syscalls are numbered differently
+diff --git a/kernel/sys.c b/kernel/sys.c
+index 35b538ba8..2f152e464 100644
+--- a/kernel/sys.c
++++ b/kernel/sys.c
+@@ -3072,3 +3072,9 @@ COMPAT_SYSCALL_DEFINE1(sysinfo, struct compat_sysinfo __user *, info)
+ 	return 0;
+ }
+ #endif /* CONFIG_COMPAT */
++
++SYSCALL_DEFINE1(hello, int, x)
++{
++	pr_info("hello: called by %s (pid %d) with %d\n", current->comm, current->pid, x);
++	return x * 2;
++}
+-- 
+2.43.0
+
