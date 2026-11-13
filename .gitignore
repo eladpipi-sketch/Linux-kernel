@@ -33,4 +33,12 @@ day10/solution/fault_test
 day11/kbuf_test
 day11/epoll_test
 day11/solution/nb_read
+day20/solution/box
+day22/syscalls
+day22/solution/syscalls
 esp32/usb_test
+
+# Day 21: QEMU's device tree, its decompiled source, yours compiled, the pin log
+day21/*.dtb
+day21/virt.dts
+day21/pins.log

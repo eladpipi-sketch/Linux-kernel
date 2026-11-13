@@ -1,0 +1,14 @@
+/*
+ * lab.dts: QEMU's device tree for its virt board (virt.dts, which you dump
+ * and decompile), plus a device nothing can discover: an LED on line 4 of
+ * the board's PL061 GPIO controller. Line 3 is QEMU's power button.
+ */
+/include/ "virt.dts"
+
+/ {
+	blinker {
+		compatible = "lab,blinker";
+		led-gpios = <&{/pl061@9030000} 4 0>;	/* controller, line, 0 = active high */
+		lab,period-ms = <500>;
+	};
+};

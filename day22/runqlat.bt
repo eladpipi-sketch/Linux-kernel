@@ -1,0 +1,16 @@
+// runqlat.bt: how long a woken task waits before it gets a CPU, in microseconds.
+tracepoint:sched:sched_wakeup, tracepoint:sched:sched_wakeup_new
+{
+	@queued[args.pid] = nsecs;
+}
+
+tracepoint:sched:sched_switch /@queued[args.next_pid]/
+{
+	@usecs = hist((nsecs - @queued[args.next_pid]) / 1000);
+	delete(@queued[args.next_pid]);
+}
+
+END
+{
+	clear(@queued);
+}

@@ -1,0 +1,17 @@
+// getppid.bt: how long Day 1's getppid() calls spend inside the kernel.
+// Run it, start ~/os/lab/day01/syscall_cost in another terminal, then Ctrl-C.
+tracepoint:syscalls:sys_enter_getppid /comm == "syscall_cost"/
+{
+	@start[tid] = nsecs;
+}
+
+tracepoint:syscalls:sys_exit_getppid /@start[tid]/
+{
+	@ns = hist(nsecs - @start[tid]);
+	delete(@start[tid]);
+}
+
+END
+{
+	clear(@start);
+}
